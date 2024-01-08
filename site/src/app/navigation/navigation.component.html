@@ -1,0 +1,153 @@
+<div class="container-nav absolute lg:fixed top-0  z-50">
+    <div class="flex justify-between text-black  place-items-center py-5">
+        <img src="../../assets/gtt-logo-mob.png" alt="" class="w-28 logo">
+
+        <nav class="deskNav lg:bg-black lg:bg-opacity-75 p-1 rounded-full gap-5 justify-evenly font-thin">
+            <a class="py-2 px-6 rounded-full font-light nav-link-default nav-active" href="javascript:void(0)"
+                routerLink="/" (click)="linkClick()">Home</a>
+            <a class="py-2 px-6 rounded-full font-light nav-link-default" href="javascript:void(0)"
+                routerLink="/about-us" (click)="linkClick()">About Us</a>
+            <a class="py-2 px-6 rounded-full font-light dropdown nav-link-default" role="button"
+                href="javascript:void(0)" (click)="linkClick()">Shop
+                <ul tabindex="0"
+                    class="dropdown-content z-[1] menu p-2 bg-black bg-opacity-70 backdrop-blur-md rounded-box w-60">
+                    <li><label for="my_modal_7" class="text-white">Cupcakes</label></li>
+                    <li><label for="my_modal_7" class="text-white">Cakes <div class="badge text-xs font-light">Coming
+                                Soon</div></label></li>
+                    <li><label for="my_modal_7" class="text-white">Cookies</label></li>
+                    <li><label for="my_modal_7" class="text-white">Gift Sets</label></li>
+                    <li><label for="my_modal_7" class="text-white">Healthy & Savoury Treats</label></li>
+                    <li><label for="my_modal_7" class="text-white">Platters</label></li>
+                    <li><label for="my_modal_7" class="text-white">Family Meals <div class="badge text-xs font-light">
+                                Coming Soon</div></label></li>
+                    <li><label for="my_modal_7" class="text-white">Custom Order</label></li>
+                </ul>
+            </a>
+            <a class="py-2 px-6 rounded-full font-light nav-link-default" href="javascript:void(0)"
+                routerLink="/specials" (click)="linkClick()">Specials</a>
+            <a class="py-2 px-6 rounded-full font-light nav-link-default" href="javascript:void(0)"
+                routerLink="/contact-us" (click)="linkClick()">Contact Us</a>
+        </nav>
+
+        <div class="drawer lg:hidden flex justify-end bg-">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+                <!-- Page content here -->
+                <label for="my-drawer" class="btn btn-ghost drawer-button rounded-full text-white"><svg class="w-5 h-5"
+                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg> Menu </label>
+            </div>
+            <div class="drawer-side">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu py-20 px-8 w-80 min-h-full bg-base-200 text-base-content">
+                    <!-- Sidebar content here -->
+                    <img src="../../assets/gtt-logo-mob.png" alt="" class="w-28">
+                    <li> <a class="py-2 px-6 rounded-full font-light" href="javascript:void(0)" routerLink="/">Home</a>
+                    </li>
+                    <li> <a class="py-2 px-6 rounded-full font-light" href="javascript:void(0)"
+                            routerLink="/about-us">About Us</a>
+                    </li>
+                    <li> <a class="py-2 px-6 rounded-full font-light dropdown" role="button"
+                            href="javascript:void(0)">Shop
+                            <ul tabindex="0"
+                                class="dropdown-content z-[1] menu p-2 bg-black bg-opacity-70 backdrop-blur-md rounded-box w-60">
+                                <li><label for="my_modal_7" class="text-white">Cupcakes</label></li>
+                                <li><label for="my_modal_7" class="text-white">Cakes <div
+                                            class="badge text-xs font-light">Coming Soon</div></label></li>
+                                <li><label for="my_modal_7" class="text-white">Cookies</label></li>
+                                <li><label for="my_modal_7" class="text-white">Gift Sets</label></li>
+                                <li><label for="my_modal_7" class="text-white">Healthy & Savoury Treats</label></li>
+                                <li><label for="my_modal_7" class="text-white">Platters</label></li>
+                                <li><label for="my_modal_7" class="text-white">Family Meals <div
+                                            class="badge text-xs font-light">Coming Soon</div></label></li>
+                                <li><label for="my_modal_7" class="text-white">Custom Order</label></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li> <a class="py-2 px-6 rounded-full font-light" href="javascript:void(0)"
+                            routerLink="/specials">Specials</a>
+                    </li>
+                    <li> <a class="py-2 px-6 rounded-full font-light" href="javascript:void(0)"
+                            routerLink="/contact-us">Contact Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my_modal_7" class="modal-toggle" />
+        <div class="modal  text-white" role="dialog">
+            <div class="modal-box text-cabinet bg-black bg-opacity-55 backdrop-blur-lg">
+                <h3 class="text-2xl font-semibold">Place an order</h3>
+                <div class="step-1" *ngIf="!selected_flavour">
+                    <p class="mb-10">Choose from our range of products</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-3">
+                        <div (click)="setOption('Chocolate Flavoured')"
+                            class="order-option h-56 bg-white bg-opacity-10 transition-all hover:bg-opacity-20 cursor-pointer rounded-lg">
+                            <img src="../../assets/images/pngwing.com (5).png" class="item-image" alt="">
+                            <p>Chocolate Flavoured</p>
+                        </div>
+                        <div (click)="setOption('Vanilla Flavoured')"
+                            class="order-option h-56 bg-white bg-opacity-10 transition-all hover:bg-opacity-20 cursor-pointer rounded-lg">
+                            <img src="../../assets/images/pngwing.com (6).png" class="item-image" alt="">
+                            <p>Vanilla Flavoured</p>
+
+                        </div>
+                        <div (click)="setOption('Red Velvet')"
+                            class="order-option h-56 bg-white bg-opacity-10 transition-all hover:bg-opacity-20 cursor-pointer rounded-lg">
+                            <img src="../../assets/images/pngwing.com (7).png" class="item-image" alt="">
+                            <p>Red Velvet</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="step-2" *ngIf="selected_flavour">
+                    <p class="mb-10">Fill-in to complete your order</p>
+                    <form class="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+                        <div class="form-group">
+                            <label for="first_name">First name</label>
+                            <input type="text" class="input" placeholder="Kagiso">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="first_name">Last name</label>
+                            <input type="text" class="input" placeholder="Monageng">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="first_name">Item selected</label>
+                            <input type="text" class="input" [value]="selected_item" [placeholder]="selected_item" [disabled]="selected_flavour">
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">Quantity</label>
+                            <input type="number" class="input">
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">Cellphone</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">Email</label>
+                            <input type="email" class="input">
+                        </div>
+
+                        <button type="submit" class="btn btn-ghost bg-white text-black mt-5">Place Order</button>
+                        <button (click)="unselect()" type="button" class="btn btn-ghost border border-white text-white mt-5">Go Back</button>
+
+                        
+                        
+
+                    </form>
+                </div>
+
+            </div>
+            <label class="modal-backdrop" for="my_modal_7">Close</label>
+        </div>
+
+        <span class="hidden lg:block"></span>
+    </div>
+</div>
