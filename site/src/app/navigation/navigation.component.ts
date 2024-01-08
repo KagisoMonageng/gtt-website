@@ -22,13 +22,13 @@ export class NavigationComponent implements OnInit {
   selected_item:string = ''
 
   ngOnInit(): void {
-    // this.headerTimeline.fromTo('.deskNav', { translateY: -100 }, { translateY: 0, duration: 1, ease: 'elastic.out', delay:.5 })
-    //   .to('.deskNav', { width: 640, duration: 2, ease:'elastic.inOut' })
-    //   .fromTo('.deskNav a', { display: 'none', opacity: 0 }, {
-    //     display: 'inline', opacity: 1, duration: 1, onComplete: () => {
-    //       gsap.to('.deskNav', { width: "fit-content",duration:2})
-    //     }
-    //   })
+    this.headerTimeline.fromTo('.deskNav', { translateY: -100 }, { translateY: 0, duration: 1, ease: 'elastic.out', delay:.5 })
+      .to('.deskNav', { width: 640, duration: 2, ease:'elastic.inOut' })
+      .fromTo('.deskNav a', { display: 'none', opacity: 0 }, {
+        display: 'inline', opacity: 1, duration: 1, onComplete: () => {
+          gsap.to('.deskNav', { width: "fit-content",duration:2})
+        }
+      })
     this.links = document.querySelectorAll(".nav-link-default")
   }
 
@@ -47,6 +47,7 @@ export class NavigationComponent implements OnInit {
     this.selected_flavour = true;
     this.selected_item = option;
   }
+
 
   unselect(){
     this.selected_flavour = false;
